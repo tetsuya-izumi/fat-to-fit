@@ -1,0 +1,127 @@
+/* general */
+
+body {
+  color: white;
+  font-family: Verdana, sans-serif;
+  font-size: 2.5vw;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../image/web.png); 
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.6em;
+  border: 2px solid white;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+input {
+  height: 3vh;
+  font-size: 70%;
+}
+
+span {
+  color: red;
+  background-color:rgba( 255, 255, 255, 0.7);
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
+
+section {
+  max-width: 1024px;
+}
+
+canvas {
+  background-color: rgba( 255, 255, 255, 0.7);
+}
+
+div {
+  margin: 1% 0;
+}
+
+
+
+/* page1 */
+
+.container {
+  height: 100vh;
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.inner {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  flex: none;
+}
+
+.title {
+  font-size: 1.6em;
+}
+
+.bodydata-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.weight-wrapper {
+  display:flex;
+  justify-content: space-around;
+}
+
+
+
+/* page3 */
+
+.graph-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* rexponsive for smartphone and tablet */
+
+@media screen and (max-width: 1024px){
+
+body {
+  font-size: 2.7vh;
+}
+
+input {
+  height: 3vh;
+  max-width: 10vw;
+}
+
+.bodydata-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.weight-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+}

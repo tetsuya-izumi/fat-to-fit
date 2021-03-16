@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ダイエットサポートサイト Fat to Fit</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<section class="container"  id="culc1">
+    <section class="inner" id="page1">
+        <div class="title">ダイエットサポートサイト Fat to Fit</div>
+        <div>
+            <div>まずは自分の身長と体重を入力し、適正な体重かどうかを調べてみましょう</div>
+                <div class="bodydata-wrapper">
+                        <div>身長 <input type="number" v-model.number="bodyheight">cm</div>
+                        <div>体重 <input type="number" id="nowbodyweight" v-model.number="bodyweight">kg</div>
+                </div>
+                <div class="weight-wrapper">
+                    <div>
+                        <div>適正体重{{ proper }}kgまで<br>
+                        {{ toproper }}kg調整しましょう</div>
+                    </div>
+                    <div>
+                        <div>美容体重{{ beauty }}kgまで<br>
+                            {{ tobeauty }}kg調整しましょう</div>
+                    </div>
+                    <div>
+                        <div>モデル体重{{ model }}kgまで<br>
+                            {{ tomodel }}kg調整しましょう</div>
+                    </div>
+                </div>
+            </div>
+            <div>健康的な身体作りでは、体脂肪率のことも考える必要があります。</div>
+        <a href="#page2">→</a>
+    </section>
+
+    <section class="inner" id="page2">
+        <div>
+            <div>
+                <div>ダイエットは中長期的な計画を立てて臨むのが成功のコツです。<br>
+                 今回は100日後の目標を立ててみましょう。</div>
+           <div>現在の体脂肪率 <input type="number" v-model.number="nowbodyfat" id="nowbodyfat">%</div>
+           <div>目標の体脂肪率 <input type="number" v-model.number="targetbodyfat" id="targetbodyfat" value="15">%</div>
+           <div>適正な体脂肪率は男性が15~20%
+            <br>女性が20~25%と言われています。</div>
+               <div>次のページではあなたが立てたプランに無理がないか確認してみましょう。</div>
+            <a href="#page1">←</a>
+            <a href="#page3" onclick="func1()">→</a>
+        </div>
+        </div>
+    </section>
+
+    <section class="inner" id="page3">
+        <div>100日後までに目標の体脂肪率{{ targetbodyfat }}%になるには、<br>
+            一日あたり約{{ reducekcal }}kcal、白米の場合約{{ reducerice }}g減らした食生活を続けましょう。</div>
+            <div class="graph-wrapper">
+                <canvas id="bodyweightgraph"></canvas>
+                <canvas id="bodyfatgraph"></canvas>
+            </div>
+            <div>あなたの立てた計画が<span>限界ペース</span>を下回る場合<br>目標の体脂肪率を上げてペースを緩やかにしましょう。</div>
+            <a href="#page2">←</a>
+    </section>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script src="components/BarChart.vue"></script>
+<script src="js/main.js"></script>
+
+</html>
