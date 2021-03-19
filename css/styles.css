@@ -9,7 +9,7 @@ body {
   height: 100vh;
   background-image: url(../image/web.png); 
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   position: relative;
   background-attachment: fixed;
 }
@@ -94,10 +94,21 @@ div {
   flex-direction: column;
 }
 
+/* rexponsive for smartphone */
+@media screen and (max-width: 599px){
 
-/* rexponsive for smartphone and tablet */
+body {
+  font-size: 2.7vh;
+  background-image: url(../image/smartphone.png); 
+  background-position: center center;
+}
 
-@media screen and (max-width: 1024px){
+}
+
+
+/* rexponsive for tablet */
+
+@media screen and (min-width: 600px) and (max-width: 1024px){
 
 body {
   font-size: 2.7vh;
