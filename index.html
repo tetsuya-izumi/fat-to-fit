@@ -7,59 +7,77 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<section class="container"  id="culc1">
+<section class="container" id="culc1">
     <section class="inner" id="page1">
-        <div class="title">ダイエットサポートサイト<br>Fat to Fit</div>
+        <div class="title">Fat to Fit</div>
         <div>
-            <div>まずは自分の身長と体重を入力し、適正な体重かどうかを調べてみましょう</div>
+            <p>当サイトはあなたの現在の体重が適正か否か診断し、<span>100日間</span>のダイエット計画を立てるためのサイトです。<br>
+                まずはあなたの身長、体重、体脂肪率と目標の体脂肪率を入力して診断してみましょう。</p>
                 <div class="bodydata-wrapper">
-                        <div>身長 <input type="number" v-model.number="bodyheight">cm</div>
-                        <div>体重 <input type="number" id="nowbodyweight" v-model.number="bodyweight">kg</div>
-                </div>
-                <div class="weight-wrapper">
-                    <div>
-                        <div>適正体重{{ proper }}kgまで<br>
-                        {{ toproper }}kg調整しましょう</div>
+                    <div class="form_line">
+                        <div class="form_line_left">身長</div><input class="form_line_center" type="number" v-model.number="bodyheight"><div class="form_line_right">cm</div>
                     </div>
-                    <div>
-                        <div>美容体重{{ beauty }}kgまで<br>
-                            {{ tobeauty }}kg調整しましょう</div>
+                    <div class="form_line">
+                        <div class="form_line_left">体重</div><input class="form_line_center" type="number" id="nowbodyweight" v-model.number="bodyweight"><div class="form_line_right">kg</div>
                     </div>
-                    <div>
-                        <div>モデル体重{{ model }}kgまで<br>
-                            {{ tomodel }}kg調整しましょう</div>
+                    <div class="form_line">
+                        <div class="form_line_left">現在の体脂肪率</div><input class="form_line_center" type="number" v-model.number="nowbodyfat" id="nowbodyfat"><div class="form_line_right">%</div>
                     </div>
+                    <div class="form_line">
+                        <div class="form_line_left">目標の体脂肪率</div><input class="form_line_center" type="number" v-model.number="targetbodyfat" id="targetbodyfat" value="15"><div  class="form_line_right">%</div>
+                    </div>
+                    <p class="caution">※適正な体脂肪率は男性が<span>15~20%</span><br>
+                       女性が<span>20~25%</span>と言われています。</p>
                 </div>
             </div>
-            <div>健康的な身体作りでは、体脂肪率のことも考える必要があります。</div>
-        <a href="#page2">→</a>
+            <div class="button"><a href="#page2">診断する</a></div>
     </section>
 
     <section class="inner" id="page2">
         <div>
-            <div>
-                <div>ダイエットは中長期的な計画を立てて臨むのが成功のコツです。<br>
-                 今回は100日後の目標を立ててみましょう。</div>
-           <div>現在の体脂肪率 <input type="number" v-model.number="nowbodyfat" id="nowbodyfat">%</div>
-           <div>目標の体脂肪率 <input type="number" v-model.number="targetbodyfat" id="targetbodyfat" value="15">%</div>
-           <div>適正な体脂肪率は男性が15~20%
-            <br>女性が20~25%と言われています。</div>
-               <div>次のページではあなたが立てたプランに無理がないか確認してみましょう。</div>
-            <a href="#page1">←</a>
-            <a href="#page3" onclick="func1()">→</a>
-        </div>
+            <p>あなたのデータから計算した診断結果はこちらです。</p>
+            <div class="subtitle-wrapper">
+                <div class="subtitle"><div class="subtitle-inner">適正体重</div></div>
+                <div class="subtitle-text">{{ proper }}kg</div>
+                <div class="subtitle"><div class="subtitle-inner">美容体重</div></div>
+                <div class="subtitle-text">{{ beauty }}kg</div>
+                <div class="subtitle"><div class="subtitle-inner">モデル体重</div></div>
+                <div class="subtitle-text">{{ model }}kg</div>
+                <div class="subtitle"><div class="subtitle-inner">ダイエット後の体重</div></div>
+                <div class="subtitle-text">{{ afterdiet }}kg</div>
+                <div class="subtitle"><div class="subtitle-inner">減らすカロリー（一日あたり）</div></div>
+                <div class="subtitle-text">{{ reducekcal }}kcal</div>
+                <div class="subtitle"><div class="subtitle-inner">白米の場合</div></div>
+                <div class="subtitle-text">{{ reducerice }}g</div>
+            </div>
+            <div class="tips-wrapper">
+                <span class="tips">~Tips~</span>
+            </div>
+                <p>ダイエット後の体重は適正体重/美容体重/モデル体重、どれに近いでしょうか。
+                    体脂肪を1kg落とすためには<span>7200kcal</span>消費する必要があります。
+                    ちなみにコンビニのおにぎり1つが白米約<span>100g</span>、約<span>180kcal</span>です。<br>
+                    この食生活を100日間続けられそうですか？「思ったより大変そう」と感じるかもしれませんね。
+                    次のページではあなたの計画が無理がないか確認してみましょう。</p>
+            
+            <div class="button"><a href="#page3" onclick="func1()">計画を確認する</a></div>
+        
         </div>
     </section>
 
     <section class="inner" id="page3">
-        <div>100日後までに目標の体脂肪率{{ targetbodyfat }}%になるには、<br>
-            一日あたり約{{ reducekcal }}kcal、白米の場合約{{ reducerice }}g減らした食生活を続けましょう。</div>
+            <p>100日間ダイエットの進捗イメージはこちらです。</p>
             <div class="graph-wrapper">
-                <canvas id="bodyweightgraph"></canvas>
-                <canvas id="bodyfatgraph"></canvas>
+            <canvas id="bodyweightgraph"></canvas>
+            <canvas id="bodyfatgraph"></canvas>
             </div>
-            <div>あなたの立てた計画が<span>限界ペース</span>を下回る場合<br>目標の体脂肪率を上げてペースを緩やかにしましょう。</div>
-            <a href="#page2">←</a>
+            <div class="tips-wrapper">
+                <span class="tips">~Tips~</span>
+            </div>
+                <p>ダイエットは無理なく続けるなら一ヶ月に<span>-1kg</span>、健康的に痩せるなら<span>-3kg</span>が限界と言われています。<br>
+                    あなたの立てた計画が限界ペースを下回る場合、
+                    目標の体脂肪率を上げてペースを緩やかにしましょう。</p>
+            
+            <div class="button"><a href="#page1">計画を立て直す</a></div>
     </section>
 </section>
 

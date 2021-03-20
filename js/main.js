@@ -2,7 +2,6 @@ var nowonlyfatweight = nowbodyweight.value * nowbodyfat.value / 100;
 var losefatweight = nowonlyfatweight * targetbodyfat.value / nowbodyfat.value ;
 var reducefatweight = nowonlyfatweight - losefatweight;
 
-
 // 自動計算
 
 var culc1 = new Vue({
@@ -17,7 +16,8 @@ var culc1 = new Vue({
         proper: function() {return Math.round(this.bodyheight / 100 * this.bodyheight / 100 * 22 * 10) / 10},
         beauty: function() {return Math.round(this.bodyheight / 100 * this.bodyheight / 100 * 20 * 10) / 10},
         model : function() {return Math.round(this.bodyheight / 100 * this.bodyheight / 100 * 18 * 10) / 10},
-        toproper: function() {return Math.round((this.bodyheight / 100 * this.bodyheight / 100 * 22 - this.bodyweight ) * 10) / 10},
+        afterdiet: function() {return Math.round((this.bodyweight - (this.bodyweight * this.nowbodyfat / 100) + (this.bodyweight * this.targetbodyfat / 100)) * 95 /100 * 10) /10},
+        toproper: function() {return Math.round(((this.bodyheight / 100 * this.bodyheight / 100 * 22 - this.bodyweight ) * 10) / 10) * (-1)},
         tobeauty: function() {return Math.round((this.bodyheight / 100 * this.bodyheight / 100 * 20 - this.bodyweight ) * 10) / 10},
         tomodel : function() {return Math.round((this.bodyheight / 100 * this.bodyheight / 100 * 18 - this.bodyweight ) * 10) / 10},
         reducekcal : function(){return Math.round(((this.bodyweight * this.nowbodyfat / 100 ) - (this.bodyweight * this.targetbodyfat / 100 )) * 7200 / 100)},
@@ -36,9 +36,12 @@ var func1 = function () {
     var weightprogress1 = nowbodyweight.value;
     var weightprogress2 = (nowbodyweight.value - nowonlyfatweight + losefatweight) * 95/100;
     
+    var c=document.getElementById("bodyweightgraph");
+    c.height=window.innerHeight*0.6;
 
     var ctx = document.getElementById("bodyweightgraph");
-    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontSize = 16;
+    Chart.defaults.global.defaultFontColor = 'black';
     var bodyweightgraph = new Chart(ctx, {
       type: 'line',
       data: {
@@ -117,6 +120,9 @@ var func1 = function () {
 
 var fatprogress1 = nowbodyfat.value;
 var fatprogress2 = targetbodyfat.value;
+
+var c=document.getElementById("bodyfatgraph");
+    c.height=window.innerHeight*0.6;
 
 var ctx = document.getElementById("bodyfatgraph");
 var bodyfatgraph = new Chart(ctx, {
