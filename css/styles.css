@@ -80,7 +80,7 @@ canvas {
 .inner {
   scroll-snap-align: start;
   height: 100vh;
-  width: 99vw;
+  width: 50vw;
   flex: none;
   overflow-y: scroll;
 }
