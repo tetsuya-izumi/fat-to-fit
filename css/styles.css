@@ -1,5 +1,9 @@
 /* general */
 
+html {
+  overflow: auto;
+}
+
 body {
   color: white;
   font-family: Verdana, sans-serif;
@@ -199,6 +203,10 @@ p {
 
 .title {
   margin: 10px auto;
+}
+
+.form_line {
+  margin: 7px auto;
 }
 
 .caution {
