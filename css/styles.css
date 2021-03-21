@@ -248,10 +248,7 @@ p {
 
 /* for ios */
 
-/* Safari用のハックは、Chromeに適用されないようにする */
-@supports (-webkit-touch-callout: none) {
   body {
     /* Safari用のハック */
     height: -webkit-fill-available;
   }
-}
