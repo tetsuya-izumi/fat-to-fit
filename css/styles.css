@@ -12,6 +12,7 @@ body {
   background-position: center top;
   position: relative;
   background-attachment: fixed;
+  min-height: -webkit-fill-available;
 }
 
 a {
@@ -65,7 +66,7 @@ canvas {
   margin: 0 auto;
   display: flex;
   overflow: hidden;
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
 }
 
 
@@ -80,11 +81,11 @@ canvas {
 
 .inner {
   scroll-snap-align: start;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   flex: none;
   overflow-y: scroll;
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
 }
 
 
