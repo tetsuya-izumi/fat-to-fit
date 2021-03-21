@@ -2,6 +2,10 @@ var nowonlyfatweight = nowbodyweight.value * nowbodyfat.value / 100;
 var losefatweight = nowonlyfatweight * targetbodyfat.value / nowbodyfat.value ;
 var reducefatweight = nowonlyfatweight - losefatweight;
 
+function timer() {
+  window.location.reload();
+}
+
 // 自動計算
 
 var culc1 = new Vue({
