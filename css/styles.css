@@ -58,16 +58,13 @@ canvas {
   margin: 5px 0;
 }
 
-div {
-}
-
 
 .container {
   height: 100vh;
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 
@@ -84,6 +81,7 @@ div {
   height: 100vh;
   width: 100vw;
   flex: none;
+  overflow-y: scroll;
 }
 
 
@@ -114,8 +112,6 @@ div {
   text-align: center;
 }
 
-input {
-}
 
 .form_line_left {
   width: 50%;
