@@ -1,9 +1,5 @@
 /* general */
 
-html {
-  overflow: auto;
-}
-
 body {
   color: white;
   font-family: Verdana, sans-serif;
@@ -87,7 +83,6 @@ canvas {
   width: 100vw;
   flex: none;
   overflow-y: scroll;
-    -webkit-overflow-scrolling:touch;
 }
 
 
@@ -204,10 +199,6 @@ p {
 
 .title {
   margin: 10px auto;
-}
-
-.form_line {
-  margin: 7px auto;
 }
 
 .caution {
