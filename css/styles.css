@@ -1,5 +1,8 @@
 /* general */
 
+html {
+  overflow: auto;
+}
 
 body {
   color: white;
@@ -61,12 +64,11 @@ canvas {
 
 
 .container {
-  /* height: 100vh; */
-  /* max-width: 1024px; */
+  height: 100vh;
+  max-width: 1024px;
   margin: 0 auto;
   display: flex;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 
@@ -81,10 +83,11 @@ canvas {
 
 .inner {
   scroll-snap-align: start;
-  height: 1000px;
+  height: 100vh;
   width: 100vw;
   flex: none;
-  /* overflow-y: auto; */
+  overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
 }
 
 
